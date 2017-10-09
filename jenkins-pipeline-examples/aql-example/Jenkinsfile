@@ -2,7 +2,7 @@ node {
     git url: 'https://github.com/jfrogdev/project-examples.git'
 
     // Get Artifactory server instance, defined in the Artifactory Plugin administration page.
-     def server = 192.168.0.32:8081
+     def server = http://192.168.0.32:8081/artifactory/webapp/#/home
 
     def buildInfo = Artifactory.newBuildInfo()
     // Set custom build name and number.
