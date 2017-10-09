@@ -2,7 +2,7 @@ node {
     git url: 'https://github.com/jfrogdev/project-examples.git'
 
     // Get Artifactory server instance, defined in the Artifactory Plugin administration page.
-    def server = Artifactory.server SERVER_ID
+     def server = 192.168.0.32:8081
 
     def buildInfo = Artifactory.newBuildInfo()
     // Set custom build name and number.
@@ -10,9 +10,9 @@ node {
     buildInfo.setNumber '42'
 
     // Read the upload spec which was downloaded from github.
-    def uploadSpec = readFile 'jenkins-pipeline-examples/resources/recursive-flat-upload.json'
-    // Upload to Artifactory.
-    server.upload spec: uploadSpec, buildInfo: buildInfo
+     def uploadSpec = readFile 'jenkins-pipeline-examples/resources/recursive-flat-upload.json'
+    //  Upload to Artifactory.
+      server.upload spec: uploadSpec, buildInfo: buildInfo
 
     // The download file contains pattern for downloading artifacts to the root directory by setting recursive=false
     def downloadSpec = readFile 'jenkins-pipeline-examples/resources/aql-download.json'
