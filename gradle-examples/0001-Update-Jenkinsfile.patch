@@ -1,0 +1,25 @@
+From bf040bdafb0137667998aaf00107c45bfc7f7bbe Mon Sep 17 00:00:00 2001
+From: hxg35320 <hxg35320@ucmo.edu>
+Date: Mon, 9 Oct 2017 17:14:46 -0400
+Subject: [PATCH] Update Jenkinsfile
+
+---
+ jenkins-pipeline-examples/declarative-example/Jenkinsfile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/jenkins-pipeline-examples/declarative-example/Jenkinsfile b/jenkins-pipeline-examples/declarative-example/Jenkinsfile
+index 15ca57c..2b9b7f7 100644
+--- a/jenkins-pipeline-examples/declarative-example/Jenkinsfile
++++ b/jenkins-pipeline-examples/declarative-example/Jenkinsfile
+@@ -11,7 +11,7 @@ pipeline {
+             steps {
+                 script{
+                     // Obtain an Artifactory server instance, defined in Jenkins --> Manage:
+-                    def server = Artifactory.server http://192.168.0.32:8081/artifactory/webapp/#/home
++                    def server = Artifactory.server http://192.168.0.32:8081/artifactory
+ 
+                     // Read the download and upload specs:
+                     def downloadSpec = readFile 'jenkins-pipeline-examples/resources/props-download.json'
+-- 
+2.14.1.windows.1
+
